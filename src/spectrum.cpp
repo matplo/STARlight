@@ -65,7 +65,7 @@ int spectrum::generateKsingle()
     }
     egamma = _eGammaMin;
 
-    // double fnorm = 0; - not used MP
+    double fnorm = 0;
 
 
     if (_hadBreakProbCalculated == false)
