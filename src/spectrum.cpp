@@ -65,7 +65,7 @@ int spectrum::generateKsingle()
     }
     egamma = _eGammaMin;
 
-    double fnorm = 0;
+    // double fnorm = 0; - not used MP
 
 
     if (_hadBreakProbCalculated == false)
@@ -100,10 +100,10 @@ int spectrum::generateKsingle()
             bint = bint + 0.5*(f1+f2)*(b-bold);
         }
         bint = 2.0*starlightConstants::pi*bint;
-        if (i == 0)
-        {
-            fnorm = 1.0/bint;
-        }
+        // if (i == 0)
+        // {
+        //    fnorm = 1.0/bint;
+        // } - fnorm is not used anywhere... MP
         _fnSingle[i] = bint*(_eGamma[i+1]-_eGamma[i]);
 
         egamma = egamma*eg_inc;
