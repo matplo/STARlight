@@ -53,14 +53,11 @@ int inputParser::parseFile(std::string filename)
       return -1;
     }
     
-    int lineSize = 256;
-    char tmp[lineSize];
     int nParameters = 0;
-    while (!infile.getline(tmp, lineSize).eof())
+    std::string tmp;
+    while (std::getline(infile, tmp))
     {
-
-        std::string line(tmp);
-	nParameters += parseString(line);
+        nParameters += parseString(tmp);
     }
 
     infile.close();

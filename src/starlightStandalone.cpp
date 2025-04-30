@@ -82,14 +82,13 @@ starlightStandalone::init()
           return -1;
         }
 
-        int lineSize = 256;
-        char tmp[lineSize];
-        while (!infile.getline(tmp, lineSize).eof())
-         {
-     	 cout << tmp << endl;
-         inputCopyFile << tmp << endl;
-         }
-        inputCopyFile.close();
+				std::string tmp;
+				while (std::getline(infile, tmp)) 
+				{
+    			std::cout << tmp << std::endl;
+    			inputCopyFile << tmp << std::endl;
+				}
+				 inputCopyFile.close();
 	}
 
 	// get the number of events
